@@ -1,0 +1,8 @@
+*
+!.gitignore
+!src
+!src/** 
+!K2_processor.runs
+!K2_processor.runs/** 
+!K2_processor.xpr
+
