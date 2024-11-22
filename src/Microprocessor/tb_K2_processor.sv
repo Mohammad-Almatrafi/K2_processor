@@ -15,6 +15,7 @@ module tb_K2_processor;
 
   always #10 clk = ~clk;
 
+  always @(Ro) $display("%d", Ro);
 
 
   initial begin
@@ -24,14 +25,8 @@ module tb_K2_processor;
     rst_n = 0;
     #1;
     rst_n = 1;
-
-
-    repeat (500) begin
-
-      @(posedge clk);
-      $display("%d", Ro);
-    end
-    $finish;
+    #4000;
+        $finish;
   end
 
 endmodule
