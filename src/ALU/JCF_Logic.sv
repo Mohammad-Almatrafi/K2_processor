@@ -20,7 +20,7 @@ module JCF_Logic (
   logic muxOut;
   assign muxOut = J ? ZF : CF;
   assign inter = muxOut & ((~S_reg & J) | (~S_reg & C));
-  assign JCF = (J & ~C) | inter;
+  assign JCF = (J & ~C & ~S_reg) | inter;
   assign Data_selector = J & C & S_reg;
-  assign DataMemEn = S_reg & D[0] & D[1] & C;
+  assign DataMemEn = (&D) & S_reg & J & C;
 endmodule
