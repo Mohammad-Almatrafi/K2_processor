@@ -6,14 +6,15 @@ module JCF_Logic (
     C,
     S_reg,
     JCF,
-    DataMemEn
+    DataMemEn,
+    Data_selector
 );
 
   input logic J;
   input logic C, CF, ZF;
   input logic S_reg;
   input logic [1:0] D;
-  output Data_selector,DataMemEn,JCF;
+  output Data_selector, DataMemEn, JCF;
 
   logic muxOut;
   assign muxOut = J ? ZF : CF;

@@ -20,16 +20,14 @@ module K2_processor #(
     rst_n,
     Ro
 );
+
   output logic [Bits-1:0] Ro;
   logic [Bits-1:0] Ra, Rb;
-  logic [2:0] imm;
-  logic J, C;
-  logic CF,ZF;
-  logic [1:0] D;
-  logic [3:0] DecOut;
   logic [Bits-1:0] MuxOut;
-  logic selectImm,;
-
+  logic [3:0] DecOut;
+  logic [2:0] imm;
+  logic [1:0] D;
+  logic J, C, CF, ZF, selectImm, S_reg, Data_selector;
 
 
   D_Register #(8) RegiserA (
@@ -39,6 +37,7 @@ module K2_processor #(
       .d(MuxOut),
       .q(Ra)
   );
+
   D_Register #(8) RegiserB (
       .clk(clk),
       .rst_n(rst_n),
@@ -71,20 +70,18 @@ module K2_processor #(
       .c(JF),
       .z(CF)
   );
-  JCF_Logic ()
 
-
-
- JCF_Logic (
-    .ZF(),
-    .CF(),
-    .J(),
-    .D(),
-    .C(),
-    .S_reg(),
-    .JCF(),
-    .DataMemEn()
-);
+  JCF_Logic Logic (
+      .ZF(ZF),
+      .CF(CF),
+      .J(J),
+      .D(D),
+      .C(C),
+      .S_reg(S),
+      .JCF(JCF),
+      .DataMemEn(DataMemEn),
+      .Data_selector(Data_selector)
+  );
 
 
 endmodule
