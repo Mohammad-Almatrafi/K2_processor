@@ -1,5 +1,3 @@
-`include "instruction_mem.sv"
-`include "K2_processor.sv"
 
 module fibbonacci_Program #(
     parameter bits = 8
@@ -10,7 +8,7 @@ module fibbonacci_Program #(
 );
 
   input clk, rst_n;
-  output [bits-1] Ro;
+  output [bits-1:0] Ro;
 
   logic [7:0] instruction_data;
   logic [3:0] ProgramAddress;

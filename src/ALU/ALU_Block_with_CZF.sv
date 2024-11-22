@@ -1,5 +1,5 @@
-`include "buildingBlocks/ALU.sv"
-`include "buildingBlocks/D_Register.sv"
+// `include "buildingBlocks/ALU.sv"
+// `include "buildingBlocks/D_Register.sv"
 module ALU_Block_with_CZF #(
     parameter bits = 8
 ) (

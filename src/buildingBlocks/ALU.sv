@@ -14,7 +14,7 @@ module ALU #(
 
 
   always @(*) begin
-    {cOut, y} = s ? a + ~b + 1'b1 : a + b;
+    {cOut, y} = s ? a - b : a + b;
 
   end
 

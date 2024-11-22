@@ -1,3 +1,4 @@
+
 module tb_K2_processor;
 
   logic clk = 0, rst_n;
@@ -25,10 +26,12 @@ module tb_K2_processor;
     rst_n = 1;
 
 
-    repeat (50) begin
-      $display("%d", Ro);
+    repeat (500) begin
+
       @(posedge clk);
+      $display("%d", Ro);
     end
+    $finish;
   end
 
 endmodule

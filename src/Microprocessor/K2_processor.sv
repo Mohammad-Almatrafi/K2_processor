@@ -1,10 +1,3 @@
-`include "buildingBlocks/D_Register.sv"
-`include "buildingBlocks/Decoder.sv"
-`include "buildingBlocks/Mux.sv"
-`include "ALU/ALU_Block_with_CZF.sv"
-`include "ALU/JCF_Logic.sv"
-`include "buildingBlocks/Counter_nBit.sv"
-
 
 module K2_processor #(
     parameter Bits = 8
@@ -15,6 +8,7 @@ module K2_processor #(
     ProgramAddress,
     Ro
 );
+  input clk, rst_n;
   input logic [7:0] instruction_data;
   output logic [Bits-1:0] Ro;
   logic [Bits-1:0] MemData;
@@ -24,14 +18,22 @@ module K2_processor #(
   logic [3:0] DecOut;
   logic [2:0] imm;
   logic [1:0] D;
-  logic J, C, CF, ZF, JCF, selectImm, S_reg, Data_selector;
+  logic J, C, CF, ZF, JCF, S_reg, Data_selector;
+  logic [Bits-1:0] DataMuxIn[1:0];
+  logic [Bits-1:0] Register_W_mux[1:0];
+  logic [3:0] load_counter;
+  logic [Bits-1:0] result;
 
   assign imm = instruction_data[2:0];
   assign J = instruction_data[7];
   assign C = instruction_data[6];
   assign S_reg = instruction_data[3];
   assign D = instruction_data[5:4];
-
+  assign DataMuxIn[0] = {'0, imm};
+  assign DataMuxIn[1] = MemData;
+  assign Register_W_mux[0] = result;
+  assign Register_W_mux[1] = type_selected;
+  assign load_counter = {'0, imm};
 
 
 
@@ -48,7 +50,7 @@ module K2_processor #(
       .rst_n(rst_n),
       .en(DecOut[1]),
       .d(MuxOut),
-      .q(Ra)
+      .q(Rb)
   );
 
   D_Register #(8) RegiserO (
@@ -72,8 +74,8 @@ module K2_processor #(
       .b(Rb),
       .s(imm[2]),
       .out(result),
-      .c(JF),
-      .z(CF)
+      .c(CF),
+      .z(ZF)
   );
 
   JCF_Logic Enable_selector_logic (
@@ -102,29 +104,29 @@ module K2_processor #(
 
   Counter_nBit #(
       .bits(4)
-  ) ProgramCounter (
+  ) PCounter (
       .clk(clk),
       .rst_n(rst_n),
       .en(1'b1),
       .load(JCF),
-      .d(imm),
+      .d(load_counter),
       .q(ProgramAddress)
   );
 
   Mux #(
-      .bits(8),
+      .bits(Bits),
       .selectBits(1)
   ) ResultImmMux (
-      .d({{result}, {type_selected}}),
+      .d(Register_W_mux),
       .s(S_reg),
       .y(MuxOut)
   );
 
   Mux #(
-      .bits(8),
+      .bits(Bits),
       .selectBits(1)
   ) dataImmMux (
-      .d({{MemData}, {'0, imm}}),
+      .d(DataMuxIn),
       .s(Data_selector),
       .y(type_selected)
   );

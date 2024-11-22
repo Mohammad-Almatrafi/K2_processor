@@ -14,12 +14,13 @@ module JCF_Logic (
   input logic C, CF, ZF;
   input logic S_reg;
   input logic [1:0] D;
-  output Data_selector, DataMemEn, JCF;
+  output logic Data_selector, DataMemEn, JCF;
 
+  logic inter;
   logic muxOut;
   assign muxOut = J ? ZF : CF;
-  assign JCF = muxOut & ((~S_reg & J) | (~S_reg & C));
+  assign inter = muxOut & ((~S_reg & J) | (~S_reg & C));
+  assign JCF = (J & ~C) | inter;
   assign Data_selector = J & C & S_reg;
   assign DataMemEn = S_reg & D[0] & D[1] & C;
-
 endmodule
