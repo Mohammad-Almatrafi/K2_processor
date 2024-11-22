@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module instruction_mem (
+module fibbonacciSequenceProgram (
     input  [3:0] s,
     output [7:0] inst
 );

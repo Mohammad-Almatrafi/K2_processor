@@ -1,9 +1,9 @@
 
-module tb_K2_processor;
+module tb_fibbonacciSequenceExecution;
 
   logic clk = 0, rst_n;
   logic [7:0] Ro;
-  fibbonacci_Program #(
+  fibbonacciSequenceExecution #(
       .bits(8)
   ) DUT (
       .clk(clk),
@@ -26,7 +26,7 @@ module tb_K2_processor;
     #1;
     rst_n = 1;
     #4000;
-        $finish;
+    $finish;
   end
 
 endmodule

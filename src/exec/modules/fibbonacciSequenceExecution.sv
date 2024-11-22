@@ -1,5 +1,5 @@
 
-module fibbonacci_Program #(
+module fibbonacciSequenceExecution #(
     parameter bits = 8
 ) (
     clk,
@@ -24,7 +24,7 @@ module fibbonacci_Program #(
 
 
 
-  instruction_mem pro (
+  fibbonacciSequenceProgram pro (
       .s(ProgramAddress),
       .inst(instruction_data)
   );
