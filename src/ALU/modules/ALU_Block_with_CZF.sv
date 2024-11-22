@@ -15,7 +15,7 @@ module ALU_Block_with_CZF #(
 
   input logic [bits-1:0] a, b;
   input logic s, clk, rst_n;
-  output [bits-1:0] out;
+  output logic [bits-1:0] out;
   output c, z;
   logic wc, wz;
 
@@ -29,7 +29,7 @@ module ALU_Block_with_CZF #(
       .cOut(wc)
   );
 
-  assign wz = ~(|out);
+  assign wz = &(~out);
 
   D_Register #(
       .bits(1)

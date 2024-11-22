@@ -1,4 +1,3 @@
-`include "Mux.sv"
 
 module Register_array #(
     parameter bits = 8,
@@ -14,8 +13,9 @@ module Register_array #(
 
   logic [bits-1:0] FF_data[(2**array_select_size)-1:0];
   always @(posedge clk, negedge rst_n) begin
-    if (~rst_n) foreach (FF_data[i]) FF_data[i] <= '0;
-    else if (R_W) begin
+    if (~rst_n) begin
+      foreach (FF_data[i]) FF_data[i] <= '0;
+    end else if (R_W) begin
       FF_data[select] <= d;
     end
   end

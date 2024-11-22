@@ -10,15 +10,16 @@ module DataTransferProgram (
 
   always @(s) begin
     case (s)
-      0: out = ;
-      1: out = ;
-      2: out = ;
-      3: out = ;
-      4: out = ;
-      5: out = ;
-      6: out = ;
-      7: out = ;
-      8: out = ;
+      0: out = 8'h08;
+      1: out = 8'hf8;
+      2: out = 8'h09;
+      3: out = 8'hf9;
+      4: out = 8'h0a;
+      5: out = 8'hfa;
+      6: out = 8'hd9;
+      7: out = 8'hc9;
+      8: out = 8'h04;
+      9: out = 8'hf0;
     endcase
   end
 
