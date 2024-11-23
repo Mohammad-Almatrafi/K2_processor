@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log imp_fibbonacci.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source imp_fibbonacci.tcl
+    with args -log imp_DataTransfer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source imp_DataTransfer.tcl
 
 
 ****** Vivado v2019.1 (64-bit)
@@ -8,29 +8,29 @@
   **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source imp_fibbonacci.tcl -notrace
-Command: synth_design -top imp_fibbonacci -part xc7a100tcsg324-1
+source imp_DataTransfer.tcl -notrace
+Command: synth_design -top imp_DataTransfer -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10286 
+INFO: Helper process launched with PID 6906 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1776.770 ; gain = 154.719 ; free physical = 1171 ; free virtual = 7755
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1776.770 ; gain = 154.719 ; free physical = 2103 ; free virtual = 8652
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'imp_fibbonacci' [/home/rur1k/Vpro/K2_processor/src/FPGA_imp/modules/imp_Fibbonacci.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'imp_DataTransfer' [/home/rur1k/Vpro/K2_processor/src/FPGA_imp/modules/imp_DataTransfer.sv:5]
 INFO: [Synth 8-6157] synthesizing module 'modN_clk' [/home/rur1k/Vpro/K2_processor/src/freq_divider/modules/modN_clk.sv:2]
-	Parameter n bound to: 5000000 - type: integer 
-	Parameter N bound to: 5000000 - type: integer 
-	Parameter width bound to: 23 - type: integer 
+	Parameter n bound to: 20000000 - type: integer 
+	Parameter N bound to: 20000000 - type: integer 
+	Parameter width bound to: 25 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'modN_counter' [/home/rur1k/Vpro/K2_processor/src/freq_divider/modules/modN_counter.sv:1]
-	Parameter n bound to: 5000000 - type: integer 
-	Parameter N bound to: 5000000 - type: integer 
-	Parameter width bound to: 23 - type: integer 
+	Parameter n bound to: 20000000 - type: integer 
+	Parameter N bound to: 20000000 - type: integer 
+	Parameter width bound to: 25 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'modN_counter' (1#1) [/home/rur1k/Vpro/K2_processor/src/freq_divider/modules/modN_counter.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'modN_clk' (2#1) [/home/rur1k/Vpro/K2_processor/src/freq_divider/modules/modN_clk.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'fibbonacciSequenceExecution' [/home/rur1k/Vpro/K2_processor/src/exec/modules/fibbonacciSequenceExecution.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'DataTransferExecution' [/home/rur1k/Vpro/K2_processor/src/exec/modules/DataTransferExecution.sv:2]
 	Parameter bits bound to: 8 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'K2_processor' [/home/rur1k/Vpro/K2_processor/src/Microprocessor/modules/K2_processor.sv:2]
 	Parameter Bits bound to: 8 - type: integer 
@@ -67,10 +67,10 @@ INFO: [Synth 8-6157] synthesizing module 'Mux__parameterized0' [/home/rur1k/Vpro
 	Parameter selectBits bound to: 1 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'Mux__parameterized0' (10#1) [/home/rur1k/Vpro/K2_processor/src/buildingBlocks/modules/Mux.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'K2_processor' (11#1) [/home/rur1k/Vpro/K2_processor/src/Microprocessor/modules/K2_processor.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'fibbonacciSequenceProgram' [/home/rur1k/Vpro/K2_processor/src/Programs/modules/fibbonacciSequenceProgram.sv:3]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/rur1k/Vpro/K2_processor/src/Programs/modules/fibbonacciSequenceProgram.sv:11]
-INFO: [Synth 8-6155] done synthesizing module 'fibbonacciSequenceProgram' (12#1) [/home/rur1k/Vpro/K2_processor/src/Programs/modules/fibbonacciSequenceProgram.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'fibbonacciSequenceExecution' (13#1) [/home/rur1k/Vpro/K2_processor/src/exec/modules/fibbonacciSequenceExecution.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'DataTransferProgram' [/home/rur1k/Vpro/K2_processor/src/Programs/modules/DataTransferProgram.sv:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rur1k/Vpro/K2_processor/src/Programs/modules/DataTransferProgram.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'DataTransferProgram' (12#1) [/home/rur1k/Vpro/K2_processor/src/Programs/modules/DataTransferProgram.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'DataTransferExecution' (13#1) [/home/rur1k/Vpro/K2_processor/src/exec/modules/DataTransferExecution.sv:2]
 INFO: [Synth 8-6157] synthesizing module 'sev_seg_controller' [/home/rur1k/Vpro/K2_processor/src/sev_seg_dec/sev_seg_controller.sv:2]
 	Parameter display_speed bound to: 20 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'seven_seg_decoder' [/home/rur1k/Vpro/K2_processor/src/sev_seg_dec/sev_seg_decoder.sv:1]
@@ -82,27 +82,27 @@ INFO: [Synth 8-6157] synthesizing module 'counter_n_bit' [/home/rur1k/Vpro/K2_pr
 	Parameter n bound to: 20 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'counter_n_bit' (16#1) [/home/rur1k/Vpro/K2_processor/src/sev_seg_dec/counter_n_bit.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'sev_seg_controller' (17#1) [/home/rur1k/Vpro/K2_processor/src/sev_seg_dec/sev_seg_controller.sv:2]
-INFO: [Synth 8-6155] done synthesizing module 'imp_fibbonacci' (18#1) [/home/rur1k/Vpro/K2_processor/src/FPGA_imp/modules/imp_Fibbonacci.sv:5]
-WARNING: [Synth 8-3917] design imp_fibbonacci has port DP driven by constant 1
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[15]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[14]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[13]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[12]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[11]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[10]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[9]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[8]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[7]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[6]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[5]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[4]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[3]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[2]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[1]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[0]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port BTNC
+INFO: [Synth 8-6155] done synthesizing module 'imp_DataTransfer' (18#1) [/home/rur1k/Vpro/K2_processor/src/FPGA_imp/modules/imp_DataTransfer.sv:5]
+WARNING: [Synth 8-3917] design imp_DataTransfer has port DP driven by constant 1
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[15]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[14]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[13]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[12]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[11]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[10]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[9]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[8]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[7]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[6]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[5]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[4]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[3]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[2]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[1]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[0]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port BTNC
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1831.520 ; gain = 209.469 ; free physical = 1174 ; free virtual = 7758
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1831.520 ; gain = 209.469 ; free physical = 2104 ; free virtual = 8655
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -115,10 +115,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1834.488 ; gain = 212.438 ; free physical = 1171 ; free virtual = 7756
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1834.488 ; gain = 212.438 ; free physical = 2103 ; free virtual = 8654
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1834.488 ; gain = 212.438 ; free physical = 1171 ; free virtual = 7756
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1834.488 ; gain = 212.438 ; free physical = 2103 ; free virtual = 8654
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -189,35 +189,35 @@ WARNING: [Vivado 12-584] No ports matched 'BTND'. [/home/rur1k/Vpro/K2_processor
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/rur1k/Vpro/K2_processor/src/Nexys-A7-100T-Master.xdc:84]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [/home/rur1k/Vpro/K2_processor/src/Nexys-A7-100T-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rur1k/Vpro/K2_processor/src/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/imp_fibbonacci_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/imp_fibbonacci_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rur1k/Vpro/K2_processor/src/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/imp_DataTransfer_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/imp_DataTransfer_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2010.176 ; gain = 0.000 ; free physical = 1079 ; free virtual = 7664
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2011.176 ; gain = 0.000 ; free physical = 2022 ; free virtual = 8589
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2010.176 ; gain = 0.000 ; free physical = 1079 ; free virtual = 7664
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2011.176 ; gain = 0.000 ; free physical = 2022 ; free virtual = 8589
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1151 ; free virtual = 7735
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 2076 ; free virtual = 8643
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1151 ; free virtual = 7735
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 2076 ; free virtual = 8643
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1153 ; free virtual = 7737
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 2076 ; free virtual = 8643
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/rur1k/Vpro/K2_processor/src/buildingBlocks/modules/ALU.sv:17]
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [/home/rur1k/Vpro/K2_processor/src/Programs/modules/fibbonacciSequenceProgram.sv:8]
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [/home/rur1k/Vpro/K2_processor/src/Programs/modules/DataTransferProgram.sv:9]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1153 ; free virtual = 7738
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 2075 ; free virtual = 8642
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -230,21 +230,20 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     23 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
 	   3 Input      9 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	               23 Bit    Registers := 1     
+	               25 Bit    Registers := 1     
 	                8 Bit    Registers := 11    
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     23 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 11    
-	  10 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -255,11 +254,10 @@ Hierarchical RTL Component report
 Module modN_counter 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     23 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
 +---Registers : 
-	               23 Bit    Registers := 1     
+	               25 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     23 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module modN_clk 
 Detailed RTL Component Info : 
@@ -305,10 +303,10 @@ Module Mux__parameterized0
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      8 Bit        Muxes := 1     
-Module fibbonacciSequenceProgram 
+Module DataTransferProgram 
 Detailed RTL Component Info : 
 +---Muxes : 
-	  10 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 1     
 Module counter_n_bit 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -329,27 +327,27 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design imp_fibbonacci has port DP driven by constant 1
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[15]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[14]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[13]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[12]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[11]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[10]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[9]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[8]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[7]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[6]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[5]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[4]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[3]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[2]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[1]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port SW[0]
-WARNING: [Synth 8-3331] design imp_fibbonacci has unconnected port BTNC
-INFO: [Synth 8-3886] merging instance 'fibbonacci/pro/out_reg[7]' (LD) to 'fibbonacci/pro/out_reg[1]'
+WARNING: [Synth 8-3917] design imp_DataTransfer has port DP driven by constant 1
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[15]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[14]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[13]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[12]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[11]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[10]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[9]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[8]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[7]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[6]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[5]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[4]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[3]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[2]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[1]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port SW[0]
+WARNING: [Synth 8-3331] design imp_DataTransfer has unconnected port BTNC
+INFO: [Synth 8-3886] merging instance 'DataTransfer/pro/out_reg[6]' (LD) to 'DataTransfer/pro/out_reg[7]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1131 ; free virtual = 7718
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 2062 ; free virtual = 8634
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -361,13 +359,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1030 ; free virtual = 7618
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1954 ; free virtual = 8533
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1938 ; free virtual = 8517
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -379,7 +377,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1938 ; free virtual = 8517
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -403,7 +401,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -416,7 +414,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -428,25 +426,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -463,54 +461,54 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    14|
+|2     |CARRY4 |    13|
 |3     |LUT1   |     3|
-|4     |LUT2   |     7|
-|5     |LUT3   |    26|
-|6     |LUT4   |    16|
-|7     |LUT5   |     9|
-|8     |LUT6   |    50|
-|9     |FDCE   |    86|
-|10    |FDRE   |    20|
-|11    |LD     |     7|
-|12    |IBUF   |     2|
-|13    |OBUF   |    16|
+|4     |LUT2   |     4|
+|5     |LUT3   |    17|
+|6     |LUT4   |    17|
+|7     |LUT5   |    38|
+|8     |LUT6   |    39|
+|9     |MUXF7  |     2|
+|10    |FDCE   |   119|
+|11    |FDRE   |    20|
+|12    |LD     |     7|
+|13    |IBUF   |     2|
+|14    |OBUF   |    16|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------------+-----------------------------+------+
-|      |Instance          |Module                       |Cells |
-+------+------------------+-----------------------------+------+
-|1     |top               |                             |   258|
-|2     |  fibbonacci      |fibbonacciSequenceExecution  |   131|
-|3     |    Processor     |K2_processor                 |    94|
-|4     |      DataMem     |Register_array               |    40|
-|5     |      PCounter    |Counter_nBit                 |    13|
-|6     |      RegiserA    |D_Register                   |    11|
-|7     |      RegiserB    |D_Register_0                 |     8|
-|8     |      RegiserO    |D_Register_1                 |    10|
-|9     |      alu         |ALU_Block_with_CZF           |    12|
-|10    |        RC        |D_Register__parameterized0   |     1|
-|11    |        RZ        |D_Register__parameterized0_2 |     3|
-|12    |        alu_logic |ALU                          |     8|
-|13    |    pro           |fibbonacciSequenceProgram    |    37|
-|14    |  slowed_clock    |modN_clk                     |    62|
-|15    |    q             |modN_counter                 |    61|
-|16    |  ssc             |sev_seg_controller           |    45|
-|17    |    counter       |counter_n_bit                |    45|
-+------+------------------+-----------------------------+------+
++------+------------------+---------------------------+------+
+|      |Instance          |Module                     |Cells |
++------+------------------+---------------------------+------+
+|1     |top               |                           |   299|
+|2     |  DataTransfer    |DataTransferExecution      |   164|
+|3     |    Processor     |K2_processor               |   134|
+|4     |      DataMem     |Register_array             |    83|
+|5     |      PCounter    |Counter_nBit               |    14|
+|6     |      RegiserA    |D_Register                 |    10|
+|7     |      RegiserB    |D_Register_0               |     8|
+|8     |      RegiserO    |D_Register_1               |     8|
+|9     |      alu         |ALU_Block_with_CZF         |    11|
+|10    |        RZ        |D_Register__parameterized0 |     3|
+|11    |        alu_logic |ALU                        |     8|
+|12    |    pro           |DataTransferProgram        |    30|
+|13    |  slowed_clock    |modN_clk                   |    70|
+|14    |    q             |modN_counter               |    69|
+|15    |  ssc             |sev_seg_controller         |    45|
+|16    |    counter       |counter_n_bit              |    45|
++------+------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1014 ; free virtual = 7602
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1918 ; free virtual = 8497
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2010.176 ; gain = 212.438 ; free physical = 1067 ; free virtual = 7655
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2010.176 ; gain = 388.125 ; free physical = 1075 ; free virtual = 7663
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2011.176 ; gain = 212.438 ; free physical = 1969 ; free virtual = 8548
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2011.176 ; gain = 389.125 ; free physical = 1969 ; free virtual = 8548
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2010.176 ; gain = 0.000 ; free physical = 1028 ; free virtual = 7616
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2011.176 ; gain = 0.000 ; free physical = 1924 ; free virtual = 8504
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 7 instances were transformed.
   LD => LDCE: 7 instances
@@ -518,10 +516,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 55 Infos, 58 Warnings, 21 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2010.176 ; gain = 626.039 ; free physical = 1106 ; free virtual = 7693
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2010.176 ; gain = 0.000 ; free physical = 1106 ; free virtual = 7693
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2011.176 ; gain = 627.039 ; free physical = 2007 ; free virtual = 8586
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2011.176 ; gain = 0.000 ; free physical = 2007 ; free virtual = 8586
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/rur1k/Vpro/K2_processor/K2_processor.runs/synth_1/imp_fibbonacci.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file imp_fibbonacci_utilization_synth.rpt -pb imp_fibbonacci_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 08:51:31 2024...
+INFO: [Common 17-1381] The checkpoint '/home/rur1k/Vpro/K2_processor/K2_processor.runs/synth_1/imp_DataTransfer.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file imp_DataTransfer_utilization_synth.rpt -pb imp_DataTransfer_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 13:21:59 2024...

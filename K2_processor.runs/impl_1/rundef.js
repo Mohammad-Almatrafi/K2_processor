@@ -29,7 +29,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log imp_fibbonacci.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source imp_fibbonacci.tcl -notrace" );
+         "-log imp_DataTransfer.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source imp_DataTransfer.tcl -notrace" );
 
 
 

@@ -10,16 +10,17 @@ module DataTransferProgram (
 
   always @(s) begin
     case (s)
-      0: out = 8'h08;
-      1: out = 8'hf8;
-      2: out = 8'h09;
-      3: out = 8'hf9;
-      4: out = 8'h0a;
-      5: out = 8'hfa;
-      6: out = 8'hd9;
-      7: out = 8'hc9;
-      8: out = 8'h04;
-      9: out = 8'hf0;
+      0:  out = {4'h0, {1'b1, 3'd2}};
+      1:  out = {4'hf, {1'b1, 3'd0}};
+      2:  out = {4'h0, {1'b1, 3'd5}};
+      3:  out = {4'hf, {1'b1, 3'd1}};
+      4:  out = {4'hc, {1'b1, 3'd0}};
+      5:  out = {4'h2, {1'b0, 3'd0}};
+      6:  out = {4'hc, {1'b1, 3'd1}};
+      7:  out = {4'h2, {1'b0, 3'd0}};
+      8:  out = {4'h1, {1'b1, 3'd5}};
+      9:  out = {4'h0, {1'b0, 3'd4}};
+      10: out = {8'hf, {1'b0, 3'd0}};
     endcase
   end
 

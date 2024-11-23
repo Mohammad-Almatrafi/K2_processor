@@ -2,7 +2,7 @@
 // `include "Counters/modules/counter_4bit.sv"
 // `include "sev_seg/modules/sev_seg_controller.sv"
 
-module imp_fibbonacci (
+module imp_DataTransfer (
     input wire CLK100MHZ,  // using the same name as pin names
     input wire CPU_RESETN,
     output wire CA,
@@ -45,7 +45,7 @@ module imp_fibbonacci (
   assign digits[1] = Ro[7:4];
 
   modN_clk #(
-      .n(5_000_000)
+      .n(20_000_000)
   ) slowed_clock (
       .clk(clk),
       .en(1'b1),

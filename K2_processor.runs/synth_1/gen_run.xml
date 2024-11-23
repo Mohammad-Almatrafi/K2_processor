@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1732341056">
-  <File Type="VDS-TIMING-PB" Name="imp_fibbonacci_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="imp_fibbonacci_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="imp_fibbonacci.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="imp_fibbonacci_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="imp_fibbonacci_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="imp_fibbonacci_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="imp_fibbonacci.vds"/>
-  <File Type="REPORTS-TCL" Name="imp_fibbonacci_reports.tcl"/>
-  <File Type="PA-TCL" Name="imp_fibbonacci.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1732357284">
+  <File Type="VDS-TIMING-PB" Name="imp_DataTransfer_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="imp_DataTransfer_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="imp_DataTransfer.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="imp_DataTransfer_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="imp_DataTransfer_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="imp_DataTransfer_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="imp_DataTransfer.vds"/>
+  <File Type="REPORTS-TCL" Name="imp_DataTransfer_reports.tcl"/>
+  <File Type="PA-TCL" Name="imp_DataTransfer.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/src/buildingBlocks/modules/ALU.sv">
@@ -33,6 +33,20 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/src/buildingBlocks/modules/D_Register.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/exec/modules/DataTransferExecution.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/Programs/modules/DataTransferProgram.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -88,20 +102,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/src/exec/modules/fibbonacciSequenceExecution.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/src/Programs/modules/fibbonacciSequenceProgram.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/src/freq_divider/modules/modN_clk.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -130,14 +130,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/src/FPGA_imp/modules/imp_Fibbonacci.sv">
+    <File Path="$PPRDIR/src/FPGA_imp/modules/imp_DataTransfer.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/src/Programs/modules/DataTransferProgram.sv">
+    <File Path="$PPRDIR/src/exec/modules/fibbonacciSequenceExecution.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -145,7 +145,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/src/exec/modules/DataTransferExecution.sv">
+    <File Path="$PPRDIR/src/Programs/modules/fibbonacciSequenceProgram.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/FPGA_imp/modules/imp_Fibbonacci.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -195,8 +203,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="imp_fibbonacci"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="imp_DataTransfer"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
