@@ -13,7 +13,7 @@ module DataTransferExecution #(
   logic [7:0] instruction_data;
   logic [3:0] ProgramAddress;
   K2_processor #(
-      .bits(bits)
+      .Bits(bits)
   ) Processor (
       .clk(clk),
       .rst_n(rst_n),

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Nov 23 08:51:32 2024
+# Process ID: 10498
+# Current directory: /home/rur1k/Vpro/K2_processor/K2_processor.runs/impl_1
+# Command line: vivado -log imp_fibbonacci.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source imp_fibbonacci.tcl -notrace
+# Log file: /home/rur1k/Vpro/K2_processor/K2_processor.runs/impl_1/imp_fibbonacci.vdi
+# Journal file: /home/rur1k/Vpro/K2_processor/K2_processor.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source imp_fibbonacci.tcl -notrace
