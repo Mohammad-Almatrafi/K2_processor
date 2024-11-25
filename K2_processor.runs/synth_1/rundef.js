@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log imp_DataTransfer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source imp_DataTransfer.tcl" );
+         "-log imp_fibbonacciData.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source imp_fibbonacciData.tcl" );
 
 
 

@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log imp_DataTransfer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source imp_DataTransfer.tcl
+EAStep vivado -log imp_fibbonacciData.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source imp_fibbonacciData.tcl
